@@ -19,7 +19,9 @@ Installation
 
 Clone and setup
 bashgit clone https://github.com/sharthak06/Arrhythmia-Classification.git
+
 cd ECGPROJECT
+
 pip install -r requirements.txt
 
 Run the application
