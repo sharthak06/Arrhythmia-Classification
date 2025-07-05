@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}About - ECG Arrhythmia Classifier{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card result-card">
+                <div class="card-header gradient-bg">
+                    <h3 class="mb-0 text-center">
+                        <i class="fas fa-info-circle me-2"></i>About ECG Arrhythmia Classifier
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <h4>Overview</h4>
+                    <p>This application uses advanced deep learning techniques to classify different types of cardiac arrhythmias from ECG spectral images. The system is trained on a comprehensive dataset and can accurately identify 6 different types of heart conditions.</p>
+
+                    <h4>Supported Arrhythmia Types</h4>
+                    <ul>
+                        <li><strong>Left Bundle Branch Block (LBBB)</strong> - Electrical conduction delay in the left ventricle</li>
+                        <li><strong>Normal</strong> - Normal heart rhythm</li>
+                        <li><strong>Premature Atrial Contraction (PAC)</strong> - Extra heartbeats originating in the atria</li>
+                        <li><strong>Premature Ventricular Contractions (PVC)</strong> - Extra heartbeats originating in the ventricles</li>
+                        <li><strong>Right Bundle Branch Block (RBBB)</strong> - Electrical conduction delay in the right ventricle</li>
+                        <li><strong>Ventricular Fibrillation</strong> - Chaotic electrical activity in the ventricles</li>
+                    </ul>
+
+                    <h4>Technical Details</h4>
+                    <ul>
+                        <li>Deep Convolutional Neural Network (CNN) architecture</li>
+                        <li>Trained on 2D ECG spectral image representations</li>
+                        <li>Advanced image preprocessing and augmentation</li>
+                        <li>Real-time classification with confidence scores</li>
+                    </ul>
+
+                    <div class="alert alert-warning mt-4">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>Medical Disclaimer:</strong> This tool is for educational and research purposes only. Always consult with qualified medical professionals for diagnosis and treatment decisions.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

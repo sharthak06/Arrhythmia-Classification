@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Analysis Results - ECG Arrhythmia Classifier{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card result-card mb-4">
+                <div class="card-header gradient-bg">
+                    <h3 class="mb-0 text-center">
+                        <i class="fas fa-chart-bar me-2"></i>ECG Analysis Results
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="alert alert-primary">
+                                <h4 class="alert-heading">
+                                    <i class="fas fa-heartbeat me-2"></i>Detected Arrhythmia
+                                </h4>
+                                <h2 class="mb-3">{{ results.predicted_class }}</h2>
+                                <div class="progress mb-2">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                         style="width: {{ (results.confidence * 100)|round(1) }}%">
+                                        {{ (results.confidence * 100)|round(1) }}%
+                                    </div>
+                                </div>
+                                <small class="text-muted">Confidence Score</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-info">
+                                <h5><i class="fas fa-info-circle me-2"></i>Classification Details</h5>
+                                <ul class="list-unstyled mb-0">
+                                    {% for class_name, probability in results.all_predictions.items() %}
+                                    <li class="mb-1">
+                                        <strong>{{ class_name }}:</strong> {{ (probability * 100)|round(2) }}%
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prediction Chart -->
+    {% if results.chart_data %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card result-card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-chart-bar me-2"></i>Detailed Analysis Chart
+                    </h5>
+                </div>
+                <div class="card-body text-center">
+                    <img src="data:image/png;base64,{{ results.chart_data }}"
+                         class="img-fluid" alt="Prediction Chart">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Action Buttons -->
+    <div class="row mt-4">
+        <div class="col-lg-12 text-center">
+            <a href="/upload" class="btn btn-primary btn-lg me-3">
+                <i class="fas fa-upload me-2"></i>Analyze Another Image
+            </a>
+            <a href="/" class="btn btn-outline-primary btn-lg">
+                <i class="fas fa-home me-2"></i>Back to Home
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

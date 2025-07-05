@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Upload ECG Image - ECG Arrhythmia Classifier{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card result-card">
+                <div class="card-header gradient-bg">
+                    <h3 class="mb-0 text-center">
+                        <i class="fas fa-upload me-2"></i>Upload ECG Spectral Image
+                    </h3>
+                </div>
+                <div class="card-body p-4">
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="upload-area mb-4">
+                            <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
+                            <h5>Select ECG Spectral Image</h5>
+                            <p class="text-muted">Supported formats: PNG, JPG, JPEG, GIF, BMP</p>
+                            <input type="file" name="file" id="file" class="form-control" accept=".png,.jpg,.jpeg,.gif,.bmp" required>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-analytics me-2"></i>Analyze ECG Image
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Instructions -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-info-circle me-2"></i>Instructions
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li>Select a clear ECG spectral image from your device</li>
+                        <li>Ensure the image shows the ECG waveform clearly</li>
+                        <li>Click "Analyze ECG Image" to get instant results</li>
+                        <li>View the classification results and confidence scores</li>
+                    </ol>
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-lightbulb me-2"></i>
+                        <strong>Tip:</strong> For best results, use high-quality ECG spectral images with clear waveform patterns.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

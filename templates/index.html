@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="gradient-bg py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">ECG Arrhythmia Classification</h1>
+                <p class="lead mb-4">Advanced AI-powered analysis of ECG spectral images to detect and classify different types of cardiac arrhythmias with high accuracy.</p>
+                <a href="/upload" class="btn btn-light btn-lg me-3">
+                    <i class="fas fa-upload me-2"></i>Start Analysis
+                </a>
+                <a href="/about" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-info-circle me-2"></i>Learn More
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <i class="fas fa-heartbeat" style="font-size: 200px; opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100 card-hover">
+                <div class="card-body text-center">
+                    <i class="fas fa-brain fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Deep Learning AI</h5>
+                    <p class="card-text">Powered by advanced convolutional neural networks trained on thousands of ECG spectral images.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100 card-hover">
+                <div class="card-body text-center">
+                    <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
+                    <h5 class="card-title">6 Arrhythmia Types</h5>
+                    <p class="card-text">Classifies Left/Right Bundle Branch Block, Normal, PAC, PVC, and Ventricular Fibrillation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100 card-hover">
+                <div class="card-body text-center">
+                    <i class="fas fa-clock fa-3x text-info mb-3"></i>
+                    <h5 class="card-title">Instant Results</h5>
+                    <p class="card-text">Get immediate classification results with confidence scores and detailed analysis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
